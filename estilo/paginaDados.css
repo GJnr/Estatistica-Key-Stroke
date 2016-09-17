@@ -1,0 +1,47 @@
+body{
+	background-color: #E3F2FD;
+}
+
+
+#menu ul{
+	padding: 0px;
+	margin: 0px;
+	background-color: #1976D2;
+	list-style: none;
+}
+
+#menu ul li{
+	display: inline;
+}
+
+#menu ul li a{
+	padding: 10px 10px;
+	display: inline-block;
+
+	background-color: #1976D2;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	border-bottom: 3px solid #1976D2;
+
+}
+
+#menu ul li a:hover{
+	background-color: #1565C0;
+	border-bottom: 3px solid #D50000;
+}
+
+.dados{
+	margin-top: 10%;
+	margin-left: 10%;
+}
+
+#inicio_div, #line_div, #chart_div{
+	margin-left: 0px;
+	margin-top: 0px;
+}
+
+#inicio_div{
+	background-color: white;
+	width: 80%;
+}

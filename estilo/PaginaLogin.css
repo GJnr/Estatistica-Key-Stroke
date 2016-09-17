@@ -1,0 +1,18 @@
+/* 
+    Created on : 02/08/2016, 23:25:47
+    Author     : Givaldo Marques
+*/
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
+body{
+    color: black;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.container{
+    background-color: rgba(210, 0, 0, 0.5);
+}

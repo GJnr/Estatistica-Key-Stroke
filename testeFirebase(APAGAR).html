@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+	<title>Firebase</title>
+</head>
+<body>
+
+	<input type="button" onclick="criarJson()" value="Criar JSON" />
+	<input type="button" onclick="atualizarMagiaBlanka()" value="Atualizar Magia Blanka" />
+	<div id="jsonOut"></div>
+
+	<script>
+
+	var firebaseRef = new Firebase("https://keystroke-38de5.firebaseio.com/");
+
+	function criarJson() {
+		firebaseRef.set(
+			{
+				"lutadores": {
+					"blanka": {
+						"magia":"Electric Thunder"
+					},
+					"ryu": {
+						"magia":"Hadouken"
+					},
+					"sagat": {
+						"magia":"Tiger Uppercut"
+					}
+				}
+			}
+		);
+	}
+
+	function atualizarMagiaBlanka() {
+		var refBlanka = firebaseRef.child("lutadores/blanka");
+		refBlanka.update({
+			"magia": "Rolling Attack"
+		});
+	}
+
+	firebaseRef.on("value", function(snapshot) {
+    	mostrarJson(snapshot.val());
+	});
+
+	function mostrarJson(json) {
+	    document.getElementById("jsonOut").innerHTML = JSON.stringify(json);
+	}
+
+	</script>
+</body>
+</html>
