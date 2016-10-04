@@ -10,23 +10,18 @@ Prof: Elisalvo
 <html>
 
 <head>
-    <title>KeyStroke - Login (Com git)</title>
+    <title>KeyStroke - Login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 
     <link rel="stylesheet" type="text/css" href="estilo/PaginaLogin.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+    <script src="//cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/KeyStroke.js"></script>
-    <script type="text/javascript" src="scripts/banco.js"></script>
-
-    <script src="http://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
 </head>
 
 <body>
@@ -35,7 +30,7 @@ Prof: Elisalvo
     </div>
 
 
-    <div class="container	">
+    <div class="container">
         <form class="form-horizantal" id="frm_botao" action="keyStroke.html">
 
             <div class="form-group">
@@ -64,7 +59,7 @@ Prof: Elisalvo
             <br><br>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <input id = "btn_entrar" type="button" class="btn btn-info" value="Entrar" />
+                    <input type="button" class="btn btn-info" value="Entrar" onclick="entrar()" />
                 </div>
             </div>
 
