@@ -1,24 +1,23 @@
 function calcQ1(_array) {//retorna o Q1 do array
-    _array.sort(function (a, b) {return a - b});
-    var aux = (_array.length) * 0.25;
+    _array.sort(function (a, b) { return a - b });
+    var aux = (_array.length-1) * 0.25;
     return _array[Math.round(aux)];
-
 }
 
 function calcQ3(_array) {//retorna o Q3 do array
-    _array.sort(function (a, b) {return a - b});
-    var aux = (_array.length) * 0.75;
-    return _array[Math.round(aux)];
-
+    _array.sort(function (a, b) { return a - b });
+    var aux = (_array.length-1) * 0.75;
+    return parseInt(_array[Math.round(aux)]);
+    //console.log(Math.round(aux));
 }
 
 function calcMenor(_array) {//retorna o menor valor do array
-    _array.sort(function (a, b) {return a - b});
+    _array.sort(function (a, b) { return a - b });
     return _array[0];
 }
 
 function calcMaior(_array) {//retorna o maior valor do array
-    _array.sort(function (a, b) {return a - b});
+    _array.sort(function (a, b) { return a - b });
     return _array[(_array.length - 1)];
 }
 
@@ -49,29 +48,4 @@ function calcFi(_dadosCalculados) {
         }
     }
 
-}
-
-
-//essa função deve calcular os quartils 1 e 3 de cada tempo entre as teclas
-
-function calcQ1_2(_dadosCalculados){
-    var soma[];
-    for(var i = 0; i < _dadosCalculados[0].length; i ++){
-        for(var j = 0; j < 15 < j++){
-            soma[i] = _dadosCalculados[j][i];
-        } 
-    }
-
-    return calcQ1(soma);
-}
-
-function calcQ3_2(_dadosCalculados){
-    var soma[];
-    for(var i = 0; i < _dadosCalculados[0].length; i ++){
-        for(var j = 0; j < 15 < j++){
-            soma[i] = _dadosCalculados[j][i];
-        } 
-    }
-
-    return calcQ3(soma);
 }

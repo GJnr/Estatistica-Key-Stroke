@@ -1,0 +1,74 @@
+<html>
+
+<head>
+	<script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<input type="text" id="nome" placeholder="Nome">
+	<input type="text" id="magia" placeholder="Magia">
+	<input type="button" id="btn" value="Criar Lutador">
+	<div id="jsonOut"></div>
+
+	<script>
+		var firebaseRef = new Firebase("https://teste-8ef28.firebaseio.com/");
+
+		firebaseRef.on("value", function(snapshot) {
+			mostrarJson(snapshot.val());
+		});
+
+		function mostrarJson(json) {
+			//document.getElementById("jsonOut").innerHTML = JSON.stringify(json);
+		}
+
+		function adicionarLutador(paramNome, paramMagia) {
+			var childRef = firebaseRef.child("lutadores");
+			childRef.push({nome:paramNome, magia:paramMagia});
+		}
+
+		$( "#btn" ).click(function() {
+			//var nome = $('#nome').val();
+			//var magia = $('#magia').val();
+			//adicionarLutador(nome, magia);
+			acessaBanco();
+		});
+
+		function buscaEmail(email, senha){
+			firebaseRef.child('usuarios').on('value', function(snapshot) {
+				snapshot.forEach(function (item){
+					if(email == item().val.email){
+						console.log("Usuário já cadastrado no banco");
+						if(senha == item().val.senha){
+							console.log("O usuário tem permissão para entrar");
+							return 1;
+						}else{
+							console.log("Senha incorreta");
+							return 2;
+						}
+					}
+				});
+				
+			}, function (errorObject) {
+				console.log("The read failed: " + errorObject.code);
+			});
+			return 0;
+		}
+		
+
+		function acessaBanco(){
+			firebaseRef.child('lutadores').on('value', function(snapshot) {
+				console.log(snapshot.val());
+
+				snapshot.forEach(function (item){
+					console.log(item.val().magia);
+				});
+				
+			}, function (errorObject) {
+				console.log("The read failed: " + errorObject.code);
+			});
+		}
+	</script>
+</body>
+
+</html>

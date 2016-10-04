@@ -5,7 +5,7 @@ var pfi = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 var pfac = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 var pfad = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-google.charts.load('visualization', 'current', {'packages': ['corechart', 'table'], 'callback': drawFrequence});
+google.charts.load('visualization', 'current', { 'packages': ['corechart', 'table'], 'callback': drawFrequence });
 
 function drawFrequence() {
 
@@ -30,14 +30,14 @@ function drawFrequence() {
     data.addColumn('number', 'fad (%)');
 
     data.addRows([
-        [{v: 1, f: '0 - 30'}, fi[0], fac[0], fad[0], pfi[0], pfac[0], pfad[0]],
-        [{v: 2, f: '30 - 60'}, fi[1], fac[1], fad[1], pfi[1], pfac[1], pfad[1]],
-        [{v: 3, f: '60 - 90'}, fi[2], fac[2], fad[2], pfi[2], pfac[2], pfad[2]],
-        [{v: 4, f: '90 - 120'}, fi[3], fac[3], fad[3], pfi[3], pfac[3], pfad[3]],
-        [{v: 5, f: '120 - 150'}, fi[4], fac[4], fad[4], pfi[4], pfac[4], pfad[4]],
-        [{v: 6, f: '150 - 180'}, fi[5], fac[5], fad[5], pfi[5], pfac[5], pfad[5]],
-        [{v: 7, f: '180 - 210'}, fi[6], fac[6], fad[6], pfi[6], pfac[6], pfad[6]],
-        [{v: 8, f: '210 - 240'}, fi[7], fac[7], fad[7], pfi[7], pfac[7], pfad[7]],
+        [{ v: 1, f: '0 - 30' }, fi[0], fac[0], fad[0], pfi[0], pfac[0], pfad[0]],
+        [{ v: 2, f: '30 - 60' }, fi[1], fac[1], fad[1], pfi[1], pfac[1], pfad[1]],
+        [{ v: 3, f: '60 - 90' }, fi[2], fac[2], fad[2], pfi[2], pfac[2], pfad[2]],
+        [{ v: 4, f: '90 - 120' }, fi[3], fac[3], fad[3], pfi[3], pfac[3], pfad[3]],
+        [{ v: 5, f: '120 - 150' }, fi[4], fac[4], fad[4], pfi[4], pfac[4], pfad[4]],
+        [{ v: 6, f: '150 - 180' }, fi[5], fac[5], fad[5], pfi[5], pfac[5], pfad[5]],
+        [{ v: 7, f: '180 - 210' }, fi[6], fac[6], fad[6], pfi[6], pfac[6], pfad[6]],
+        [{ v: 8, f: '210 - 240' }, fi[7], fac[7], fad[7], pfi[7], pfac[7], pfad[7]],
     ]);
 
     var table = new google.visualization.Table(document.getElementById('frequencia_div'));
@@ -45,12 +45,13 @@ function drawFrequence() {
     var option = {
         left: "5%",
         top: "5%",
-        width: "90%",
-        height: "100%",
         showRowNumber: false
     };
 
     table.draw(data, option);
+    var width = "150px"
+    
+    $('.google-visualization-table-th').css('width', width);
 }
 
 function calcFi(_dadosCalculados) {

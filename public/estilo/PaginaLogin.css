@@ -1,0 +1,16 @@
+/* 
+    Created on : 02/08/2016, 23:25:47
+    Author     : Givaldo Marques
+*/
+
+
+
+body{
+    color: black;
+    background-image: url("../img/bg_index.jpg");
+    background-size: 100%;
+}
+
+.container{
+    background-color: rgba(244, 67, 54, 0.6);
+}

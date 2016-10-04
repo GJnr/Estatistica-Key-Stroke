@@ -1,0 +1,36 @@
+body{
+	background-color: rgb(220, 220, 255);
+}
+
+.graficoCurvas{
+	width: 100%;
+	min-height: 450px;
+}
+
+.graficoSimulador{
+	margin: auto;
+	width: 70%;
+	min-height: 450px;
+}
+
+
+.graficoQuartis{
+	margin: auto;
+	width: 100%;
+	min-height: 450px;
+}
+
+.tabelaFrequencia{
+	margin: auto;
+	text-align: center;
+}
+
+.tabelaEstatistica{
+	margin: auto;
+	width: 100%;
+	text-align: center;
+}
+.imput_simulador{
+	margin: auto;
+	width: 175px;
+}
