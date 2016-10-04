@@ -5,9 +5,9 @@
  * Esse arquivo faz a conexão com o banco de dados e possui as funções necessárias para a aplicação.
  */
 
-//var firebaseRef = new Firebase("https://teste-8ef28.firebaseio.com/");
+var firebaseRef = new Firebase("//keystroke-df93c.firebaseio.com/");
 
-var firebaseRef = new Firebase("https://keystroke-df93c.firebaseio.com/");
+//var firebaseRef = new Firebase("//keystroke-38de5.firebaseio.com/");
 
 /*
 insere um usuario no banco de dados, retorna se foi inserido;

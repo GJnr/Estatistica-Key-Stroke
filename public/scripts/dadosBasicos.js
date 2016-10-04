@@ -72,6 +72,7 @@ function vetTotal(_dadosCalculados) {
         _dadosCalculados[13],
         _dadosCalculados[14]);
     return total;
+
 }
 
 average = function (a) {

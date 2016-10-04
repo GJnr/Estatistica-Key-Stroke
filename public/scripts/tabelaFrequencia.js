@@ -50,7 +50,6 @@ function drawFrequence() {
 
     table.draw(data, option);
     var width = "150px"
-    
     $('.google-visualization-table-th').css('width', width);
 }
 
