@@ -1,0 +1,44 @@
+/*
+    Created on : 02/08/2016, 23:25:47
+    Author     : Givaldo Marques
+*/
+
+@import "https://fonts.googleapis.com/css?family=Montserrat";
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("../img/bg_index.jpg");
+    background-size: 100%;
+}
+
+.container{
+    float: right;
+    min-height: 100vh;
+    max-width: 400px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgba(244, 67, 54, 0.9);
+}
+
+.control-label{
+    margin-top: 30px;
+}
+
+.form-group{
+}
+
+h2{
+    font-weight: bolder;
+
+    border-radius: 25px;
+    border: 3px solid black;
+    padding: 20px;
+    width: auto;
+    height: auto;
+}
+
+#titulo{
+    text-align: center;
+}
+
+#div_tentativa{
+}

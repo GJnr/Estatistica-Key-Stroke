@@ -1,6 +1,13 @@
+/**
+ * @author: Givaldo Marques dos Santos
+ */
+
 google.charts.load('visualization', 'current', { 'packages': ['corechart', 'table'], 'callback': drawChart });
 
-function drawChart() {//desenha os grafico dos quartis
+/**
+ * Plota o grafico dos quartis
+ */
+function drawChart() {
     var dadosCarregados = JSON.parse(localStorage.getItem("tempos"));
     console.log(dadosCarregados);
     var data = google.visualization.arrayToDataTable([
@@ -40,6 +47,9 @@ function drawChart() {//desenha os grafico dos quartis
 
 }
 
+/**
+ * Recarrega o gráfico ao redimensionar a página
+ */
 $(window).resize(function () {
     drawChart();
 });

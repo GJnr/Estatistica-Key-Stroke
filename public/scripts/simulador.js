@@ -1,7 +1,7 @@
 /**
  * @author: Givaldo Marques dos Santos - 201420029045
- * Ciência da Computação - UFS, 09/2016  
- *         
+ * Ciência da Computação - UFS, 09/2016
+ *
  * Simula o funcionamento do Keystroke.
  * Segue o exemplo do artigo 'Biometrics for fool proof security'
  * Utiliza dos quartis 1 e 3 como limite superior e limite inferior.
@@ -49,10 +49,10 @@ function tentativa() {
     }
 
     /*
-        Keystroke
-        Verificação se ha algum valor fora dos limites aceitados.
-        Para que a Identidade seja confirmada é necessário que não tenha valores fora dos limites
-    */
+     Keystroke
+     Verificação se ha algum valor fora dos limites aceitados.
+     Para que a Identidade seja confirmada é necessário que não tenha valores fora dos limites
+     */
     for (var i = 0; i < senha.length; i++) {
         if (tempos2[i] < q1[i] - margemDeErro || tempos2[i] > q3[i] + margemDeErro) {
             document.getElementById("tentativa_div").innerHTML = "Você não é quem diz ser. Tente Novamente!";
@@ -60,12 +60,12 @@ function tentativa() {
             return;
         }
     }
-    document.getElementById("tentativa_div").innerHTML = "Identidade confirmada."
+    document.getElementById("tentativa_div").innerHTML = "Identidade confirmada.";
     limparDados();
 }
 
 
-/** 
+/**
  * Evento acionado ao usuario apertar qualquer tecla.
  * Essa função calcula o tempo entre cada tecla digitada.
  */
@@ -84,7 +84,7 @@ function keyStroke_simulador() {
 }
 
 
-/** 
+/**
  * plota o gráfico
  */
 function desenhaCurva() {
@@ -121,7 +121,7 @@ function desenhaCurva() {
     chart.draw(data, options);
 }
 
-/** 
+/**
  * Calcular os quartils 1 de cada tempo entre as teclas
  */
 function calcQ1_2(_dadosCalculados) {

@@ -1,3 +1,7 @@
+/**
+ * @author: Givaldo Marques dos Santos
+ */
+
 function calcQ1(_array) {//retorna o Q1 do array
     _array.sort(function (a, b) { return a - b });
     var aux = (_array.length-1) * 0.25;
@@ -21,6 +25,9 @@ function calcMaior(_array) {//retorna o maior valor do array
     return _array[(_array.length - 1)];
 }
 
+/**
+ * Calcula a frequência do array
+ */
 function calcFi(_dadosCalculados) {
 
     for (var i = 0; i < 15; i++) {

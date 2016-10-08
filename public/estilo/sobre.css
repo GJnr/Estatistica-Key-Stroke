@@ -1,0 +1,32 @@
+body{
+    background-size: 100%;
+    margin: 0;
+}
+
+h1{
+    font-size:4.5em;
+}
+
+p{
+    font-weight:400;
+    font-size:3em;
+}
+
+.img-quadrata {
+    border-radius:50%;
+    width:200px;
+    height: 200px;
+}
+
+
+h3{
+    font-weight:800;
+    color:#f0ad4e;
+    font-size:2em;
+}
+small{
+    text-align:center;
+    font-size:1.5em;
+    text-decoration:underline;
+    color:gray;
+}

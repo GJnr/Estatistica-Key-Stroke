@@ -14,7 +14,7 @@ Prof: Elisalvo
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 
-    <link rel="stylesheet" type="text/css" href="estilo/PaginaLogin.css">
+    <link rel="stylesheet" type="text/css" href="estilo/paginaLogin.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -30,49 +30,58 @@ Prof: Elisalvo
 </head>
 
 <body>
-    <div>
-        <p id="tentativas"></p>
-    </div>
 
+    <div class="container col-sm-10">
+        <div id="titulo">
+            <h2>Keystroke:<br>
+                Identificação Biométrica</h2>
+        </div>
 
-    <div class="container	">
-        <form class="form-horizantal" id="frm_botao" action="keyStroke.html">
+            <form class="form-horizantal" id="frm_botao" action="inicio.html">
 
             <div class="form-group">
-                <label class="control-label col-sm-2" for="email">Email:</label>
+                <label class="control-label col-sm-10" for="email">Email:</label>
                 <div class="col-sm-10">
                     <input type="email" class="form-control" id="email" placeholder="Insira seu e-mail">
                 </div>
             </div>
-            <br><br>
+
             <div class="form-group">
-                <label class="control-label col-sm-2" for="pwd">Password:</label>
+                <label class="control-label col-sm-10">Senha:</label>
                 <div class="col-sm-10">
                     <input type="password" class="form-control" id="txt_senha" placeholder="Insira a senha" onkeydown="key_stroke()">
                 </div>
             </div>
-            <br><br>
+
             <div class="form-group">
-                <label for="sel3" class="control-label col-sm-2">Selecione o sexo:</label>
+                <label class="control-label col-sm-10">Selecione o sexo:</label>
                 <div class="col-sm-10">
-                    <select class="form-control" id="sel1">
-                            <option value="Homem">Homem</option>
-                            <option value="Mulher">Mulher</option>
-                        </select>
-                </div>
-            </div>
-            <br><br>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <input id = "btn_entrar" type="button" class="btn btn-info" value="Entrar" />
+                    <select class="form-control" id="sel1" title="Sexo">
+                        <option value="none">Escolha</option>
+                        <option value="Homem">Homem</option>
+                        <option value="Mulher">Mulher</option>
+                    </select>
                 </div>
             </div>
 
+            <div class="form-group">
+                <div class="control-label col-sm-10">
+                    <input id = "btn_entrar" type="button" class="btn btn-info" value="Entrar" />
+                </div>
+            </div>
         </form>
-        <div>
-            <p id="validarSenha" style="color: blue;"></p>
-            <p id="validarEmail" style="color: blue;"></p>
+
+
+        <div id="div_info" class="form-group">
+            <div class="control-label col-sm-10">
+                <div id="div_tentativa">
+                    <p id="tentativas"></p>
+                </div>
+                <p id="validarSenha"></p>
+                <p id="validarEmail"></p>
+            </div>
         </div>
+
     </div>
 
 

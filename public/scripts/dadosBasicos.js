@@ -1,4 +1,4 @@
-google.charts.load('visualization', 'current', { 'packages': ['corechart', 'table'], 'callback': drawFrequence });
+google.charts.load("visualization", "current", { "packages": ["corechart", "table"], "callback": drawFrequence });
 
 var dados = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -13,14 +13,15 @@ function drawFrequence() {
         dados[i] = average(dadosCalculados[i]);
     }
 
+
     var data = new google.visualization.DataTable();
 
-    data.addColumn('string', 'Tentativas');
-    data.addColumn('number', 'Tempo médio (ms)');
-    data.addColumn('number', 'Mediana (ms)');
-    data.addColumn('number', 'Variância (ms)');
-    data.addColumn('number', 'Desvio Padrão (ms)');
-    data.addColumn('string', 'Coeficiente de Varição (%)');
+    data.addColumn("string", "Tentativas");
+    data.addColumn("number", "Tempo médio (ms)");
+    data.addColumn("number", "Mediana (ms)");
+    data.addColumn("number", "Variância (ms)");
+    data.addColumn("number", "Desvio Padrão (ms)");
+    data.addColumn("string", "Coeficiente de Varição (%)");
 
     data.addRows([
         ["1ª Tentativa", dados[0].mean, calcMediana(dadosCalculados[0]), dados[0].variance, dados[0].deviation, CV(dados[0])],
@@ -41,7 +42,7 @@ function drawFrequence() {
         ["Total", x.mean, calcMediana(arrayTotal), x.variance, x.deviation, CV(x)],
     ]);
 
-    var table = new google.visualization.Table(document.getElementById('frequencia_div'));
+    var table = new google.visualization.Table(document.getElementById("frequencia_div"));
 
     var option = {
         left: "5%",
@@ -50,9 +51,9 @@ function drawFrequence() {
     };
 
     table.draw(data, option);
-    var width = "150px"
-    $('.google-visualization-table-th').css('width', width);
-}
+    var width = "150px";
+    $(".google-visualization-table-th").css("width", width);
+};;
 
 
 
@@ -87,20 +88,20 @@ average = function (a) {
     for (m = r.mean = s / t, l = t, s = 0; l--; s += Math.pow(a[l] - m, 2));
 
     return r.deviation = Math.sqrt(r.variance = s / t), r;
-}
+};
 
-function calcMediana(Vet) {
+function calcMediana(vet) {
     var mediana = 0;
 
-    Vet.sort(function (a, b) {
+    vet.sort(function (a, b) {
         return a - b
     });
 
-    if (Vet.length % 2 == 0)
-        return mediana = ((Vet[((Vet.length - 1) / 2) - 1]) + (Vet[((Vet.length - 1) / 2)])) / 2;
+    if (vet.length % 2 == 0)
+        return mediana = ((vet[((vet.length) / 2) - 1]) + (vet[((vet.length) / 2)])) / 2;
 
     else
-        return mediana = Vet[Math.floor(Vet.length / 2) - 1];
+        return mediana = vet[Math.floor(vet.length / 2) - 1];
 
 }
 
@@ -117,35 +118,3 @@ function CV(x) {
     }
     return string;
 }
-/*
- function ArrayModa(array)
- {
- if (array.length == 0)
- return null;
- var modeMap = {},
- maxCount = 1, 
- modes = [array[0]];
- 
- for(var i = 0; i < array.length; i++)
- {
- var el = array[i];
- 
- if (modeMap[el] == null)
- modeMap[el] = 1;
- else
- modeMap[el]++;
- 
- if (modeMap[el] > maxCount)
- {
- modes = [el];
- maxCount = modeMap[el];
- }
- else if (modeMap[el] == maxCount)
- {
- modes.push(el);
- maxCount = modeMap[el];
- }
- }
- return modes;
- }
- */

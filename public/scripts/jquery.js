@@ -22,14 +22,14 @@ $(function () {
 $(function () {
   $("#li_inicio").click(function (e) {
     e.preventDefault();
-    location.href = "keyStroke.html";
+    location.href = "inicio.html";
   });
 });
 
 $(function () {
   $("#li_inicio2").click(function (e) {
     e.preventDefault();
-    location.href = "keyStroke.html";
+    location.href = "inicio.html";
   });
 });
 
@@ -41,9 +41,23 @@ $(function () {
 });
 
 $(function () {
+  $("#li_probabilidade").click(function (e) {
+    e.preventDefault();
+    location.href = "probabilidade.html";
+  });
+});
+
+$(function () {
   $("#li_simulador").click(function (e) {
     e.preventDefault();
     location.href = "simulador.html";
+  });
+});
+
+$(function () {
+  $("#li_sobre").click(function (e) {
+    e.preventDefault();
+    location.href = "sobre.html";
   });
 });
 
