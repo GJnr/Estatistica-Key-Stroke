@@ -92,7 +92,11 @@ function analisaStatus() {
         proxPagina(true);
     } else if (statusUsuario == 2) {
         document.getElementById("validarEmail").innerHTML = "Este email já está cadastrado, mas a senha está incorreta. Verifique e tente novamente.";//senha do banco 
+        statusUsuario = -1;
     } else if (verificaSenha() && verificaEmail()) {
+        document.getElementById("email").disabled = true;//email
+        document.getElementById("sel1").disabled= true;//sexo
+
         nCliques++;
         document.getElementById("tentativas").innerHTML = "Faltam " + (15 - nCliques) + " tentativas";
 
@@ -114,7 +118,7 @@ $(function () {
     $("#btn_entrar").click(function () {
         email = document.getElementById("email").value;//email
         sexo = document.getElementById("sel1").value;//sexo
-        var senha = document.getElementById("txt_senha").value;
+        let senha = document.getElementById("txt_senha").value;
 
         estaCadastrado(email, senha);
         window.setTimeout(analisaStatus, 1000);//Espera a resposta do Bando de dados
