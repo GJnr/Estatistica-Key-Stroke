@@ -1,3 +1,5 @@
+
+
 google.charts.load("visualization", "current", { "packages": ["corechart", "table"], "callback": drawFrequence });
 
 var dados = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -42,7 +44,6 @@ function drawFrequence() {
         ["Total", x.mean, calcMediana(arrayTotal), x.variance, x.deviation, CV(x)],
     ]);
 
-    coeficienteDeVariacao =  CV(x);
 
     var table = new google.visualization.Table(document.getElementById("frequencia_div"));
 
@@ -55,9 +56,7 @@ function drawFrequence() {
     table.draw(data, option);
     var width = "150px";
     $(".google-visualization-table-th").css("width", width);
-};;
-
-
+};
 
 function vetTotal(_dadosCalculados) {
     var total = _dadosCalculados[0].concat(_dadosCalculados[1],

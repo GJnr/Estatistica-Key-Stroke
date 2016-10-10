@@ -9,7 +9,7 @@ google.charts.load('visualization', 'current', { 'packages': ['corechart', 'tabl
  */
 function drawChart() {
     var dadosCarregados = JSON.parse(localStorage.getItem("tempos"));
-    console.log(dadosCarregados);
+
     var data = google.visualization.arrayToDataTable([
         ['1ª vez', calcMenor(dadosCarregados[0]), calcQ1(dadosCarregados[0]), calcQ3(dadosCarregados[0]), calcMaior(dadosCarregados[0])],
         ['2ª vez', calcMenor(dadosCarregados[1]), calcQ1(dadosCarregados[1]), calcQ3(dadosCarregados[1]), calcMaior(dadosCarregados[1])],

@@ -1,10 +1,14 @@
 /**
- * @author Givaldo Marques
+ * @author Givaldo Marques 201420029045
  * @author Pedro Henrique
+ *
+ * Ciência da Computação - UFS em 10/10/2016
  * 
  * Esse arquivo faz a conexão com o banco de dados e possui as funções necessárias para a aplicação.
  */
 
+
+//Referencia ao banco de dados
 var firebaseRef = new Firebase("//keystroke-df93c.firebaseio.com/");
 
 //var firebaseRef = new Firebase("//keystroke-38de5.firebaseio.com/");

@@ -1,6 +1,6 @@
 /**
  * @author: Givaldo Marques dos Santos - 201420029045
- * Ciência da Computação - UFS, 09/2016
+ * Ciência da Computação - UFS em 01/09/2016
  *
  * Simula o funcionamento do Keystroke.
  * Segue o exemplo do artigo 'Biometrics for fool proof security'
@@ -18,10 +18,10 @@ var usuario = localStorage.getItem("email");
 var q1 = calcQ1_2(dados);
 var q3 = calcQ3_2(dados);
 
-var margemDeErro = coeficienteDeVariacao;
+var margemDeErro = 100  ;
 
+//noinspection JSUnresolvedFunction
 var firebaseRef = new Firebase("//keystroke-df93c.firebaseio.com/");
-
 
 /**
  * Limpa os campos e zera os contadores
@@ -92,7 +92,6 @@ function keyStroke_simulador() {
 
 
 // criar um nó no banco de dados com o nome simulador, nele irá inserir a quantidade de nós que existem
-
 function armazenarTentativas(){// do simulador
     var exist = false;
 
@@ -101,7 +100,6 @@ function armazenarTentativas(){// do simulador
 
             if(usuario === item.val().email && !exist){
                 exist = true;
-                return;
             }
         });
 
@@ -116,8 +114,6 @@ function armazenarTentativas(){// do simulador
     };
 
     firebaseRef.child('simulador').push(data);
-    usuarioErros = 0;
-    console.log("inserir novo nó qtdErros: " + erros);
     usuarioErros = 0;
 }
 
@@ -153,6 +149,7 @@ function desenhaCurva() {
     };
 
 
+    //noinspection JSUnresolvedFunction
     var chart = new google.charts.Line(document.getElementById('linechart_tentativa'));
 
     chart.draw(data, options);
@@ -180,7 +177,7 @@ function calcQ3_2(_dadosCalculados) {
     var soma = [];
     var ret = [];
     for (var i = 0; i < _dadosCalculados[0].length; i++) {
-        for (var j = 0; j < 15; j++) {//**mudar para 15
+        for (var j = 0; j < 15; j++) {
             soma[j] = _dadosCalculados[j][i];
         }
         ret[i] = calcQ3(soma);
