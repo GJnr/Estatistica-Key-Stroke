@@ -1,3 +1,5 @@
+var coeficienteDeVariacao = 0;
+
 $(function () {
   $("#li_quartis").click(function (e) {
     e.preventDefault();

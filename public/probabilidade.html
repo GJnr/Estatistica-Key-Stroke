@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script type="text/javascript" src="//www.gstatic.com/charts/loader.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/probabilidade.js"></script>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="estilo/paginaDados.css">
+
+    <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAEXGdMy4dOl7BoUuqCJv4chgR_WPRhye8",
+            authDomain: "keystroke-df93c.firebaseapp.com",
+            databaseURL: "https://keystroke-df93c.firebaseio.com",
+            storageBucket: "keystroke-df93c.appspot.com",
+            messagingSenderId: "114666213728"
+        };
+        firebase.initializeApp(config);
+    </script>
+
     <title>Probabilidade</title>
 </head>
 <body>
@@ -43,6 +59,11 @@
         </div>
     </nav>
 
+    <div>
+        <div id = "prob_div"></div>
+    </div>
+
+    <h2 id="h2_carregando">Carregando...</h2>
     <h1>404 <br>Pedro não fez ainda.</h1>
 
 </body>

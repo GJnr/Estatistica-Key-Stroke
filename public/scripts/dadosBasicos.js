@@ -42,6 +42,8 @@ function drawFrequence() {
         ["Total", x.mean, calcMediana(arrayTotal), x.variance, x.deviation, CV(x)],
     ]);
 
+    coeficienteDeVariacao =  CV(x);
+
     var table = new google.visualization.Table(document.getElementById("frequencia_div"));
 
     var option = {

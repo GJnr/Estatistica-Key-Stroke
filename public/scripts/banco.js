@@ -42,11 +42,11 @@ function estaCadastrado(email, senha) {
                     if (senha == item.val().senha) {
                         console.log("O usuário tem permissão para entrar");
                         statusUsuario = 1;
-                        return;
+
                     } else {
                         console.log("Senha incorreta");
                         statusUsuario = 2;
-                        return;
+
                     }
 
                 } else {
@@ -65,7 +65,7 @@ function estaCadastrado(email, senha) {
 Essa função retorna os tempos de um determinado usuário a partir de seu email
  */
 function getDados(email) {
-    var ret;
+    var ret=-1;
     firebaseRef.child('usuario').on('value', function (snapshot) {
         snapshot.forEach(function (item) {
             if (email == item.val().email) {

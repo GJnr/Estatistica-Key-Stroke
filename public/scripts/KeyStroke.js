@@ -32,15 +32,18 @@ window.onload = function () {
  */
 function proxPagina(condicao) {
     if (condicao) {//se a pessoa já tinha cadastro
+        var dadosSalvos;
         senha = document.getElementById("txt_senha").value;
-        var dadosSalvos = getDados(email);
+        dadosSalvos = getDados(email);
     } else {//se a pessoa não tinha cadastro
-        var dadosSalvos = JSON.stringify(tempos);
+        dadosSalvos = JSON.stringify(tempos);
         inserirBanco(email, senha, dadosSalvos, sexo);
     }
     console.log(senha);
     localStorage.setItem("tempos", dadosSalvos);
     localStorage.setItem("senha", senha);
+    localStorage.setItem("email", email);
+
     nCliques = 0;
     document.getElementById("frm_botao").submit();
 }

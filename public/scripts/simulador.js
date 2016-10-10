@@ -13,10 +13,14 @@ var botoes2 = [];
 var tempos2 = [];
 var i = 0, j = 0;
 var dados = JSON.parse(localStorage.getItem("tempos"));//dados do usuario logado
-
+var usuarioErros = 0;
+var usuario = localStorage.getItem("email");
 var q1 = calcQ1_2(dados);
 var q3 = calcQ3_2(dados);
-var margemDeErro = 100;
+
+var margemDeErro = coeficienteDeVariacao;
+
+var firebaseRef = new Firebase("//keystroke-df93c.firebaseio.com/");
 
 
 /**
@@ -38,6 +42,7 @@ function tentativa() {
     if (senha_simulacao !== senha) {//se a senha da simulacao for diferente da senha da tentativa
         document.getElementById("tentativa_div").innerHTML = "Senha Errada.";
         limparDados();
+        usuarioErros++;
         return;
     }
 
@@ -45,6 +50,7 @@ function tentativa() {
     if (senha_simulacao.length > (tempos2.length + 1)) {
         document.getElementById("tentativa_div").innerHTML = "Senha Correta, mas você usou 'ctrl+v'";
         limparDados();
+        usuarioErros++;
         return;
     }
 
@@ -57,6 +63,7 @@ function tentativa() {
         if (tempos2[i] < q1[i] - margemDeErro || tempos2[i] > q3[i] + margemDeErro) {
             document.getElementById("tentativa_div").innerHTML = "Você não é quem diz ser. Tente Novamente!";
             limparDados();
+            usuarioErros++;
             return;
         }
     }
@@ -83,6 +90,36 @@ function keyStroke_simulador() {
     i++;
 }
 
+
+// criar um nó no banco de dados com o nome simulador, nele irá inserir a quantidade de nós que existem
+
+function armazenarTentativas(){// do simulador
+    var exist = false;
+
+    firebaseRef.child('simulador').on('value', function(snapshot){
+        snapshot.forEach(function(item){
+
+            if(usuario === item.val().email && !exist){
+                exist = true;
+                return;
+            }
+        });
+
+    });
+    if(exist) {
+        return;
+    }
+
+    var data = {
+        email : usuario,
+        qtdErros : usuarioErros
+    };
+
+    firebaseRef.child('simulador').push(data);
+    usuarioErros = 0;
+    console.log("inserir novo nó qtdErros: " + erros);
+    usuarioErros = 0;
+}
 
 /**
  * plota o gráfico
