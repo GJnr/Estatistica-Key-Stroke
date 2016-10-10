@@ -288,7 +288,7 @@
       <workItem from="1476025383237" duration="3523000" />
       <workItem from="1476057304990" duration="7121000" />
       <workItem from="1476124018779" duration="2680000" />
-      <workItem from="1476143408353" duration="108000" />
+      <workItem from="1476143408353" duration="114000" />
     </task>
     <task id="LOCAL-00001" summary="Criação das paginas 'sobre' e 'probabilidade'">
       <created>1475937737196</created>
@@ -353,11 +353,18 @@
       <option name="project" value="LOCAL" />
       <updated>1476143497280</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Criação da página &quot;probabilidade&quot;">
+      <created>1476143520694</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1476143520694</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34910000" />
+    <option name="totallyTimeSpent" value="34916000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
