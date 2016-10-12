@@ -1,5 +1,3 @@
-
-
 google.charts.load("visualization", "current", { "packages": ["corechart", "table"], "callback": drawFrequence });
 
 var dados = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -11,7 +9,7 @@ function drawFrequence() {
     var arrayTotal = vetTotal(dadosCalculados);
     var x = average(arrayTotal);
 
-    for (var i = 0; i < 15; i++) {
+    for (var i = 0; i < 15; i++) { // necessario para a chamar a função que calcula a media, variancia e desvio padrao para todas as tentativas.
         dados[i] = average(dadosCalculados[i]);
     }
 
@@ -25,6 +23,7 @@ function drawFrequence() {
     data.addColumn("number", "Desvio Padrão (ms)");
     data.addColumn("string", "Coeficiente de Varição (%)");
 
+    //criação da tabela com seus respectivos campos
     data.addRows([
         ["1ª Tentativa", dados[0].mean, calcMediana(dadosCalculados[0]), dados[0].variance, dados[0].deviation, CV(dados[0])],
         ["2ª Tentativa", dados[1].mean, calcMediana(dadosCalculados[1]), dados[1].variance, dados[1].deviation, CV(dados[1])],
@@ -58,6 +57,7 @@ function drawFrequence() {
     $(".google-visualization-table-th").css("width", width);
 };
 
+//função que concatena todos os valores em apenas um vetor
 function vetTotal(_dadosCalculados) {
     var total = _dadosCalculados[0].concat(_dadosCalculados[1],
         _dadosCalculados[2],
@@ -77,6 +77,7 @@ function vetTotal(_dadosCalculados) {
 
 }
 
+// função que realiza o calculo da variancia, media e desvio padrão
 average = function (a) {
     var r = {
         mean: 0,
@@ -91,26 +92,28 @@ average = function (a) {
     return r.deviation = Math.sqrt(r.variance = s / t), r;
 };
 
+//função que realiza o calculo da mediana
 function calcMediana(vet) {
     var mediana = 0;
 
-    vet.sort(function (a, b) {
+    vet.sort(function (a, b) {      //ordena o vetor
         return a - b
     });
 
-    if (vet.length % 2 == 0)
+    if (vet.length % 2 == 0)        // se o indice central do vetor for par, entao o resultado da mediana será a soma dos 2 elementos centrais divididos por 2.
         return mediana = ((vet[((vet.length) / 2) - 1]) + (vet[((vet.length) / 2)])) / 2;
 
     else
-        return mediana = vet[Math.floor(vet.length / 2) - 1];
+        return mediana = vet[Math.floor(vet.length / 2) - 1]; //se for impar, este valor sera a mediana.
 
 }
 
+//função que retorna ao coeficiente de variação
 function CV(x) {
     var string = "";
-    var cv = (x.deviation / x.mean) * 100;
-    cv = cv.toFixed(3);
-    if (cv <= 15) {
+    var cv = (x.deviation / x.mean) * 100; //calculo do C.V.
+    cv = cv.toFixed(3);             // arredonda o C.V. em 3 casas decimais
+    if (cv <= 15) {     
         string = cv + " (Baixa Dispersão)";
     } else if (cv > 15 && cv < 30) {
         string = cv + " (Média Dispersão)";

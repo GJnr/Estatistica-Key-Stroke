@@ -136,14 +136,11 @@ function key_stroke() {
     botoes[nCliques][cBotoes] = parseFloat(now.getTime());//Tempo desde a virada do século
 
     if (cBotoes > 0) {//Se não for o primeiro botão digitado
-
         /*
          * Tempo entre as teclas: tempo da tecla anterior - o tempo da tecla atual 
          */
         tempos[nCliques][j] = parseFloat(botoes[nCliques][cBotoes] - botoes[nCliques][cBotoes - 1]);
-        //console.log("tempos[" + nCliques + "][" + j + "] = " + tempos[nCliques][j]);
         j++;
-        //console.log(botoes[nCliques][cBotoes] - botoes[nCliques][cBotoes-1]);   
     }
 
     cBotoes++;
