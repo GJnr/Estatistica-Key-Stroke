@@ -3,6 +3,7 @@
 body{
     font-family: 'Montserrat', sans-serif;
     background-size: 100%;
+    background: gainsboro;
 }
 
 h1{
@@ -56,5 +57,5 @@ p{
 }
 
 .titulo{
-    background-color: rgba(244, 67, 54, 0.3);
+    background-color: rgba(244, 67, 54, 0.5);
 }
