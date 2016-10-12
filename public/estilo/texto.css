@@ -1,0 +1,21 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat';
+p{
+	text-align: justify;
+	font-size: 17px; 
+}
+#inicio_div{
+	padding: 30px;
+	margin: auto;
+}
+
+div.text{
+	max-width: 80%; 
+	margin: auto;
+}
+
+#tudo{
+	text-align: center;
+}
+body{
+     font-family: 'Montserrat', sans-serif;
+}
