@@ -13,6 +13,8 @@
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="estilo/paginaDados.css">
+    <link rel="stylesheet" type="text/css" href="estilo/footer.css">
+    <script type="text/javascript" src="scripts/dadosUsuario.js"></script>
     <link rel="stylesheet" type="text/css" href="estilo/sobre.css">
 
     <title>Sobre</title>
@@ -41,70 +43,96 @@
                 <li id="li_simulador"> <a href="#">Simulador</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li><a id="email" href="#"></a></li>
+                <li id="li_espaco"></li>
                 <li id="li_sobre" class="active"><a href="#"><span class="glyphicon glyphicon-info-sign"></span>Sobre</a></li>
                 <li id="li_sair"><a href="#"><span class="glyphicon glyphicon-log-in"></span>Sair</a></li>
             </ul>
         </div>
     </div>
 </nav>
+
 <div class="section">
     <div class="container">
+
         <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-center text-primary">Team</h1>
-                <p class="text-center">We are a group of skilled individuals</p>
+            <div class="col-md-12 titulo">
+                <h1 class="text-center text-primary">Equipe</h1>
+                <p class="text-center">Somos alunos do curso de Ciência da Computação - UFS</p>
             </div>
         </div>
+
         <div class="row">
+            <div id="equipe">
+                <div class="col-md-12">
 
-         <div>
-                <!-- Givaldo Marques -->
-            <div class="col-md-4 foto">
-                <img src="img\givaldoMarques.jpg"
-                     class="img-quadrata center-block" >
-                <a href="#" onclick="location.href = '//www.facebook.com/gmsjunior' ">
-                    <h3 class="text-center"/>Givaldo Marques
-                </a>
-                    <br/>
-                    <small> Gerente de Projetos</small></h3>
+                    <!-- Givaldo Marques -->
+                    <div class= "col-md-3">
+                        <a href="//www.facebook.com/gmsjunior" target="_blank">
+                            <img src="img\givaldoMarques.jpg" class="img-quadrata center-block" >
+                            <h3 class="text-center"/>Givaldo Marques<br/>
+                            <small> Gerente de Projetos</small></h3>
+                        </a>
+                    </div>
+
+                    <!-- Pedro Henrique-->
+                    <div class="col-md-3">
+                        <a href="//www.facebook.com/profile.php?id=100002591589019&fref=ts " target="_blank">
+                            <img src="img\pedro.jpeg" class="img-quadrata center-block" >
+                            <h3 class="text-center"/>Pedro Henrique Leite<br/>
+                            <small> Back-end</small></h3>
+                        </a>
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="//www.facebook.com/italo.jorge.75?fref=ts" target="_blank">
+                            <img src="img/italo.jpeg" class="img-quadrata center-block" >
+                            <h3 class="text-center"/>Ítalo Jorge Manhães<br/>
+                            <small> Back-end</small></h3>
+                        </a>
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="//www.facebook.com/itamar.ss?fref=ts" target="_blank">
+                            <img src="img/itamar.jpg"  class="img-quadrata center-block" >
+                            <h3 class="text-center"/>Itamar Santos<br/>
+                            <small> Front-end</small></h3>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!--footer start from here-->
+                <footer>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 footerleft ">
+                                <div class="logofooter">KeyStroke</div>
+                                <p>No trabalho solicitado pelo professor Elisalvo foi visado implementar todo conteúdo que foi dado na disciplina de Estatística Aplicada
+                                    para usar uma  técnica de biometria chamada KeyStroke.</p>
+                                <p><i class="fa fa-map-pin"></i>Universidade Federal de Sergipe</p>
+                                <p><i class="fa fa-envelope"></i>E-mail: keyEstcomp@gmail.com</p>
+
+                            </div>
+                            <div class="col-md-2 col-sm-6 paddingtop-bottom">
+                                <h6 class="heading7"></h6>
+                                <ul class="footer-ul">
+                                    <li><a href="inicio.html"> KeyStroke</a></li>
+                                    <li><a href="simulador.html"> Simulador</a></li>
+                                    <li><a href="sobre.html"> Sobre</a></li>
+                                    <li><a href="mailto:keyEstcomp@gmail.com"> Fale Conosco</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+
+
             </div>
-
-            <div class="col-md-4 foto">
-                <img src="https://goo.gl/BOI8J6"
-                     class="img-quadrata center-block" >
-                <a href="#" onclick="location.href = '//www.facebook.com/gmsjunior' ">
-                    <h3 class="text-center"/>Nome SegundoNome
-                </a>
-                <br/>
-                <small> Cargo</small></h3>
-            </div>
-
-            <div class="col-md-4 foto">
-                <img src="https://goo.gl/BOI8J6"
-                     class="img-quadrata center-block" >
-                <a href="#" onclick="location.href = '//www.facebook.com/gmsjunior' ">
-                    <h3 class="text-center"/>Nome SegundoNome
-                </a>
-                <br/>
-                <small> Cargo</small></h3>
-            </div>
-
-            <div class="col-md-4 foto">
-                <img src="https://goo.gl/BOI8J6"
-                     class="img-quadrata center-block" >
-                <a href="#" onclick="location.href = '//www.facebook.com/gmsjunior' ">
-                    <h3 class="text-center"/>Nome SegundoNome
-                </a>
-                <br/>
-                <small> Cargo</small></h3>
-            </div>
-         </div>
-
-
         </div>
     </div>
 </div>
-
 
 </body>
 </html>

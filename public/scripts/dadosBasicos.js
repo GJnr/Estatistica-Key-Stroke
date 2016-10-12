@@ -54,7 +54,7 @@ function drawFrequence() {
 
     table.draw(data, option);
     var width = "150px";
-    $(".google-visualization-table-th").css("width", width);
+    $(".google-visualization-table-td").css("width", width);
 };
 
 //função que concatena todos os valores em apenas um vetor

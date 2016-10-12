@@ -15,7 +15,7 @@ $(document).ready(function () {
 });
 
 function startup() {
-    firebase.database().ref().child('usuario').on('value', function (snapshot) {
+    firebaseRef.child('usuario').on('value', function (snapshot) {
         snapshot.forEach(function (item) {
 
             var quebra;
@@ -48,7 +48,6 @@ function startup() {
 function drawProb() {
 
     h = parseFloat(((h - tamanho) / tamanho + 1).toFixed(4));
-
     f = parseFloat(((f - tamanho) / tamanho + 1).toFixed(4));
     gmail = parseFloat(((gmail - tamanho) / tamanho + 1).toFixed(4));
     hotmail = parseFloat(((hotmail - tamanho) / tamanho + 1).toFixed(4));
@@ -71,11 +70,16 @@ function drawProb() {
     ]);
 
     var option = {
-        showRowNumber: false,
+        left: "5%",
+        top: "5%",
+        showRowNumber: false
     };
 
     var table = new google.visualization.Table(document.getElementById('prob_div'));
     table.draw(data, option);
+
+    var width = "150px";
+    $(".google-visualization-table-td").css("width", width);
 
 }
 

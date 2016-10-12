@@ -1,15 +1,17 @@
+@import "https://fonts.googleapis.com/css?family=Montserrat";
+
 body{
+    font-family: 'Montserrat', sans-serif;
     background-size: 100%;
-    margin: 0;
 }
 
 h1{
-    font-size:4.5em;
+    font-size:3em;
 }
 
 p{
     font-weight:400;
-    font-size:3em;
+    font-size:2em;
 }
 
 .img-quadrata {
@@ -18,15 +20,41 @@ p{
     height: 200px;
 }
 
-
-h3{
-    font-weight:800;
-    color:#f0ad4e;
-    font-size:2em;
+.col-md-12{
+    margin:auto;
 }
-small{
+
+.img-quadrata:hover {
+    border-radius:50%;
+    width:220px;
+    height: 220px;
+}
+
+.small{
     text-align:center;
-    font-size:1.5em;
-    text-decoration:underline;
+    font-size:1em;
     color:gray;
+}
+
+.small:hover{
+    text-align:center;
+    font-size:1.02em;
+    color:gray;
+}
+
+.container{
+    margin: auto;
+}
+
+.section{
+    position: relative;
+    height: 90vh;
+}
+
+#equipe{
+    margin: 50px auto;
+}
+
+.titulo{
+    background-color: rgba(244, 67, 54, 0.3);
 }

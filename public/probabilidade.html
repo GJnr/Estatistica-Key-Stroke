@@ -5,14 +5,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <script src="//gstatic.com/firebasejs/3.4.1/firebase.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script type="text/javascript" src="//www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="scripts/jquery.js"></script>
+        <script type="text/javascript" src="scripts/dadosProb.js"></script>
+
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-        <script type="text/javascript" src="scripts/jquery.js"></script> 
-        <script type="text/javascript" src="scripts/dadosProb.js"></script> 
-
-<script src="//gstatic.com/firebasejs/3.4.1/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -28,7 +27,8 @@
         <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
   
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="estilo/PaginaDados.css">
+        <link rel="stylesheet" type="text/css" href="estilo/paginaDados.css">
+        <link rel="stylesheet" type="text/css" href="estilo/probabilidade.css">
 
         <title>Probabilidade</title>
     </head>
@@ -62,11 +62,14 @@
             </div>
         </nav>
         <div>
-            <div id="prob_div" class="tabelaProbabilidade"></div>
+            <h2 id="h2_carregando">Carregando...</h2>
         </div>
-        <h2 id="h2_carregando">Carregando...</h2>
-        <div>
-            <div id="amostra_div" class="tabelaAmostral" ></div>
+
+        <div class="col-md-2 prob_tabelas">
+            <div class="tabelas">
+                <div id="prob_div" class="tabelaProbabilidade col-md-12"></div>
+                <div id="amostra_div" class="tabelaAmostral col-md-12 " ></div>
+            </div>
         </div>
     </body>
 </html>
