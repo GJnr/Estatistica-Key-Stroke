@@ -1,7 +1,7 @@
 /**
  * @author: Givaldo Marques dos Santos - 201420029045
- * Ciência da Computação - UFS em 01/09/2016
- *
+ * Ciência da Computação - UFS, 09/2016  
+ *         
  * Simula o funcionamento do Keystroke.
  * Segue o exemplo do artigo 'Biometrics for fool proof security'
  * Utiliza dos quartis 1 e 3 como limite superior e limite inferior.
@@ -13,15 +13,14 @@ var botoes2 = [];
 var tempos2 = [];
 var i = 0, j = 0;
 var dados = JSON.parse(localStorage.getItem("tempos"));//dados do usuario logado
-var usuarioErros = 0;
-var usuario = localStorage.getItem("email");
+
 var q1 = calcQ1_2(dados);
 var q3 = calcQ3_2(dados);
+var margemDeErro = 100;
 
-var margemDeErro = 100  ;
+var erros = 0; // >>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<
+var user = localStorage.getItem("email");
 
-//noinspection JSUnresolvedFunction
-var firebaseRef = new Firebase("//keystroke-df93c.firebaseio.com/");
 
 /**
  * Limpa os campos e zera os contadores
@@ -42,7 +41,8 @@ function tentativa() {
     if (senha_simulacao !== senha) {//se a senha da simulacao for diferente da senha da tentativa
         document.getElementById("tentativa_div").innerHTML = "Senha Errada.";
         limparDados();
-        usuarioErros++;
+//        console.log("erros anterior1: " + erros);
+        erros++;
         return;
     }
 
@@ -50,29 +50,59 @@ function tentativa() {
     if (senha_simulacao.length > (tempos2.length + 1)) {
         document.getElementById("tentativa_div").innerHTML = "Senha Correta, mas você usou 'ctrl+v'";
         limparDados();
-        usuarioErros++;
+//        console.log("erros anterior2: " + erros);
+        erros++;
         return;
     }
 
     /*
-     Keystroke
-     Verificação se ha algum valor fora dos limites aceitados.
-     Para que a Identidade seja confirmada é necessário que não tenha valores fora dos limites
-     */
+        Keystroke
+        Verificação se ha algum valor fora dos limites aceitados.
+        Para que a Identidade seja confirmada é necessário que não tenha valores fora dos limites
+    */
     for (var i = 0; i < senha.length; i++) {
         if (tempos2[i] < q1[i] - margemDeErro || tempos2[i] > q3[i] + margemDeErro) {
             document.getElementById("tentativa_div").innerHTML = "Você não é quem diz ser. Tente Novamente!";
             limparDados();
-            usuarioErros++;
+//            console.log("erros anterior3: " + erros);
+            erros++;
             return;
         }
     }
-    document.getElementById("tentativa_div").innerHTML = "Identidade confirmada.";
+    document.getElementById("tentativa_div").innerHTML = "Identidade confirmada."
     limparDados();
+    armazenarTentativas();
+}
+
+// criar um nó no banco de dados com o nome simulador, nele irá inserir a quantidade de nós que existem 
+function armazenarTentativas(){// do simulador
+    var exist = false;
+    var data = {
+        email : user,
+        qtdErros : erros
+    };
+    firebaseRef.child('simulador').on('value', function(snapshot){
+        snapshot.forEach(function(item){
+            if(user === item.val().email && !exist){
+              	exist = true;
+                return;
+            }
+        });
+
+    });
+    if(exist)
+        return;
+
+    firebaseRef.child('simulador').push(data);
+    erros = 0;
+    console.log("inserir novo nó qtdErros: " + erros);
+    
+    erros = 0;
 }
 
 
-/**
+
+/** 
  * Evento acionado ao usuario apertar qualquer tecla.
  * Essa função calcula o tempo entre cada tecla digitada.
  */
@@ -91,33 +121,7 @@ function keyStroke_simulador() {
 }
 
 
-// criar um nó no banco de dados com o nome simulador, nele irá inserir a quantidade de nós que existem
-function armazenarTentativas(){// do simulador
-    var exist = false;
-
-    firebaseRef.child('simulador').on('value', function(snapshot){
-        snapshot.forEach(function(item){
-
-            if(usuario === item.val().email && !exist){
-                exist = true;
-            }
-        });
-
-    });
-    if(exist) {
-        return;
-    }
-
-    var data = {
-        email : usuario,
-        qtdErros : usuarioErros
-    };
-
-    firebaseRef.child('simulador').push(data);
-    usuarioErros = 0;
-}
-
-/**
+/** 
  * plota o gráfico
  */
 function desenhaCurva() {
@@ -149,13 +153,12 @@ function desenhaCurva() {
     };
 
 
-    //noinspection JSUnresolvedFunction
     var chart = new google.charts.Line(document.getElementById('linechart_tentativa'));
 
     chart.draw(data, options);
 }
 
-/**
+/** 
  * Calcular os quartils 1 de cada tempo entre as teclas
  */
 function calcQ1_2(_dadosCalculados) {
@@ -177,7 +180,7 @@ function calcQ3_2(_dadosCalculados) {
     var soma = [];
     var ret = [];
     for (var i = 0; i < _dadosCalculados[0].length; i++) {
-        for (var j = 0; j < 15; j++) {
+        for (var j = 0; j < 15; j++) {//**mudar para 15
             soma[j] = _dadosCalculados[j][i];
         }
         ret[i] = calcQ3(soma);

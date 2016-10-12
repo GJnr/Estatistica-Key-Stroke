@@ -25,7 +25,7 @@ function inserirBanco(email, senha, dados, sexo) {
         sexo: sexo
     };
 
-    firebaseRef.ref().child('usuario').push(data);
+    firebaseRef.child('usuario').push(data);
     return true;
 }
 

@@ -49,7 +49,46 @@
     <div id="inicio_div" class="dados">
         <h1>Keystroke</h1>
         <h2>Segurança Biométrica</h2>
-        <p>Texto sobre keystroke</p>
+    </div>
+
+
+    <div>
+        <h3>Resumo do trabalho prático</h3>
+        <p>
+            No trabalho solicitado pelo professor Elisalvo foi visado implementar todo conteúdo que foi dado na disciplina de Estatística Aplicada
+            para usar uma  técnica de biometria chamada KeyStroke. Nela se analisa informações obtidas através do tempo de digitação do usuário, o e-mail
+            do usuário e o sexo. O intervalo de tempo entre uma tecla de digitação e outra é a medida necessária para se calcular dados como frequência
+            absoluta, frequência relativa, frequência acumulada crescente, frequência acumulada decrescente, desvio padrão, variância, coeficiente de
+            variância, mediana, tempo médio de digitação, plotar gráficos dos quartis.
+        </p>
+
+        <p>
+            Para organizar esses dados criamos links como Estatística, que mostra uma tabela com desvio padrão, CV, variância, tempo de digitação.
+            E foi a partir de tabelas e gráficos que foi apresentado os resultados que obtemos com o conteúdo ministrado nessa disciplina.
+        </p>
+
+        <p>
+            Através dos quartis Q1 e Q3 é feito um simulador de um KeyStroke que funciona de maneira simples, nele é dado o Q1 como tempo mínimo de
+            digitação e Q3 dado como o tempo máximo que usuário pode digitar com base no padrão que ele digitou nas 15 vezes de cadastro. O gráfico
+            foi organizado com 3 linhas, o Q1, Q3, e a tentativa do usuário. Mostrando em tempo real uma parte da técnica de biometria utilizada, caso
+            a tentativa fique entre as linhas do Q1 e Q3 a identidade do usuário estaria confirmada. Para fim de facilitar a técnica, o Q3 é acrescentado
+            um valor que serviria como um desvio padrão entre os tempos de digitação do usuário.
+        </p>
+
+        <p>
+            Foi utilizado um banco de dados para poder salvar os dados de entrada de cada usuário, e na parte do simulador foi contado os erros
+            para atingir a “Identidade Confirmada” da biometria, esses erros foram contados por cada usuário que utilizou o simulador. Esses dados
+            armazenados no banco foram utilizados para dois fins: primeiro para acesso, caso os dados de entrada já existam no banco ele não faz
+            o cadastro 15 vezes novamente, mas obtêm direto acesso a tela que mostra os resultados obtidos da vez que fez o cadastro. Segundo, para
+            calcular as probabilidades.
+        </p>
+
+        <p>
+            Na parte probabilidade foram analisados diversos casos, tais como a probabilidade de um
+            usuário aleatório ser de determinado sexo, ou de possuir gmail, Hotmail ou outro provedor. Também se calcula uma margem de erros obtida
+            através de uma média dos erros que foram inseridos no banco, com ela se verifica quantos usuários passaram dessa média de erros e é obtida
+            essa margem. Com essa margem também é possível determinar um intervalo de confiança para analisar os dados corretamente.
+        </p>
     </div>
 
 </body>
