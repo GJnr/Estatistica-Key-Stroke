@@ -26,7 +26,7 @@ function drawCurve() {
   ]);
 
   var options = {
-    title: 'Company Performance',
+    title: 'Frequência',
     curveType: 'none',
     legend: { position: 'bottom' }
   };
