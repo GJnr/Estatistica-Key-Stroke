@@ -1,7 +1,8 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat';
 p{
 	text-align: justify;
-	font-size: 17px; 
+	font-size: 17px;
+	text-indent:4em;
 }
 #inicio_div{
 	padding: 30px;
@@ -9,7 +10,12 @@ p{
 }
 
 div.text{
-	max-width: 80%; 
+	max-width: 80%;
+	margin: auto;
+}
+
+#intro{
+	max-width: 80%;
 	margin: auto;
 }
 
@@ -17,5 +23,5 @@ div.text{
 	text-align: center;
 }
 body{
-     font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }

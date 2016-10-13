@@ -11,7 +11,6 @@ var parametro;
 var desvio;
 var margemErro;
 var Amostral;
-var selecionados = [];
 
 google.charts.load('visualization', 'current', { 'packages': ['corechart', 'table'] });
 
@@ -20,7 +19,7 @@ $(document).ready(function () {
 });
 
 function startup() {
-    firebase.database().ref().child('usuario').on('value', function (snapshot) {
+    firebaseRef.child('usuario').on('value', function (snapshot) {
         snapshot.forEach(function (item) {
 
             var quebra = [];
@@ -74,7 +73,7 @@ function drawProb() {
         ['De ser hotmail', (hotmail*100).toFixed(2) + ""],
         ['De ser gmail', (gmail*100).toFixed(2) + ""],
         ['De ser outro tipo de email', (nenhum2*100).toFixed(2) + ""],
-    	['Dos erros do simulador serem maiores que a media ' + parametro , (prob*100).toFixed(2) + ""]
+    	['Dos erros do simulador serem maiores que a media (' + parametro +")" , (prob*100).toFixed(2) + ""]
     ]);
 
     var option = {
@@ -96,7 +95,7 @@ function drawAmostral(){
 	data.addColumn('string','');
 	data.addRows([
 		['Tamanho da Amostra', Math.round(0.65*(qtdErros.length)) + ""],
-		['Media amostral', Amostral + ""],
+		['Media amostral', Amostral.toFixed(2) + ""],
 		['Variância amostral', parseFloat(Math.pow(desvio,2)).toFixed(2) + ""],
 		['Desvio Amostral', parseFloat(desvio).toFixed(2) + ""]
 		]);
@@ -117,7 +116,7 @@ function drawAmostral(){
 //verifica qtd de tentativas erradas do simulador, puxando do banco de dados
 function puxarErros() {
 
-    firebase.database().ref().child('simulador').on('value', function (snapshot) {
+    firebaseRef.child('simulador').on('value', function (snapshot) {
         snapshot.forEach(function (item) {
             qtdErros[j] = item.val().qtdErros;
             j++;
