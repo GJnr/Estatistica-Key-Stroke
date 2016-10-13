@@ -3,65 +3,78 @@
 
 <head>
 
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<script src="//gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+    <script src="//gstatic.com/firebasejs/3.4.1/firebase.js"></script>
     <script src="//cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
 
     <script type="text/javascript" src="//www.gstatic.com/charts/loader.js"></script>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="scripts/jquery.js"></script>
-	<script type="text/javascript" src="scripts/banco.js"></script>
-	<script type="text/javascript" src="scripts/dadosProb.js"></script>
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/banco.js"></script>
+    <script type="text/javascript" src="scripts/dadosProb.js"></script>
 
 
 
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="estilo/paginaDados.css">
-	<link rel="stylesheet" type="text/css" href="estilo/probabilidade.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="estilo/paginaDados.css">
+    <link rel="stylesheet" type="text/css" href="estilo/probabilidade.css">
+    <link rel="stylesheet" type="text/css" href="estilo/footer.css">
 
-	<title>Probabilidade</title>
+    <title>Probabilidade</title>
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-				<a id="li_inicio2" class="navbar-brand" href="#">Keystroke</a>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
-					<li id="li_inicio"><a href="#">Início</a></li>
-					<li id="li_estatistica"><a href="#">Estatística</a></li>
-					<li id="li_frequencia"><a href="#">Frequência</a></li>
-					<li id="li_quartis"><a href="#">Quartis</a></li>
-					<li id="li_probabilidade" class="active"><a href="#">Probabilidade</a></li>
-					<li id="li_curva"><a href="#">Curvas</a></li>
-					<li id="li_simulador"> <a href="#">Simulador</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li id="li_sobre"><a href="#"><span class="glyphicon glyphicon-info-sign"></span>Sobre</a></li>
-					<li id="li_sair"><a href="#"><span class="glyphicon glyphicon-log-in"></span>Sair</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<div>
-		<h2 id="h2_carregando">Carregando...</h2>
-	</div>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a id="li_inicio2" class="navbar-brand" href="#">Keystroke</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li id="li_inicio"><a href="#">Início</a></li>
+                <li id="li_estatistica"><a href="#">Estatística</a></li>
+                <li id="li_frequencia"><a href="#">Frequência</a></li>
+                <li id="li_quartis"><a href="#">Quartis</a></li>
+                <li id="li_probabilidade" class="active"><a href="#">Probabilidade</a></li>
+                <li id="li_curva"><a href="#">Curvas</a></li>
+                <li id="li_simulador"> <a href="#">Simulador</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li id="li_sobre"><a href="#"><span class="glyphicon glyphicon-info-sign"></span>Sobre</a></li>
+                <li id="li_sair"><a href="#"><span class="glyphicon glyphicon-log-in"></span>Sair</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div>
+    <h2 id="h2_carregando">Carregando...</h2>
+</div>
 
-	<div>
-		<div id="prob_div" class="tabelaProbabilidade"></div>
-		<div id="amostra_div" class="tabelaAmostral"></div>
-	</div>
+<div>
+    <div id="prob_div" class="tabelaProbabilidade"></div>
+    <div id="amostra_div" class="tabelaAmostral"></div>
+</div>
+
+<footer>
+    <div class="container" id="rodape">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 footer">
+                <div class="logofooter">Keystroke</div>
+                <p class="texto_rodape"><i class="fa fa-map-pin"></i>Universidade Federal de Sergipe - 2016</p>
+                <p class="texto_rodape"> E-mail: <a href="mailto:keyestcomp@gmail.com"> <i class="fa fa-envelope"></i>keyestcomp@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 </body>
 

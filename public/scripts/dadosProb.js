@@ -172,3 +172,4 @@ $(window).resize(function () {
     drawProb();
     drawAmostral();
 });
+
