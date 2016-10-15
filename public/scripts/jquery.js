@@ -55,10 +55,10 @@ $(function () {
 });
 
 $(function () {
-  $("#li_sobre").click(function (e) {
-    e.preventDefault();
-    location.href = "sobre.html";
-  });
+    $("#li_sobre").click(function (e) {
+        e.preventDefault();
+        location.href = "sobre.html";
+    });
 });
 
 $(function () {
@@ -69,3 +69,22 @@ $(function () {
     }
   });
 });
+
+window.onload = function () {
+    var idUsuario = localStorage.getItem("email").split("@")[0];
+    $("#nome_sair").text(" "+idUsuario);
+    $("#nome_sair").css({"color": "white"});
+};
+
+$(function () {
+    var idUsuario = localStorage.getItem("email").split("@")[0];
+    $("#li_sair").mouseover(function () {
+        $("#nome_sair").text(" Sair");
+        $("#nome_sair").css({"color": "rgba(244, 67, 54, 1)"});
+    });
+
+    $("#li_sair").mouseout(function () {
+        $("#nome_sair").text(" "+idUsuario);
+        $("#nome_sair").css({"color": "white"});
+    });
+})

@@ -44,3 +44,16 @@ body{
 .col-sm-10{
     margin-top: 5px;
 }
+
+#nome_sair{
+    width: 20px;
+    text-align: center;
+}
+
+
+#li_sair{
+    min-width: 100px;
+    text-align: center;
+    padding: 1px;
+    height: auto;
+}
